@@ -7,6 +7,7 @@ import android.os.Handler
 import android.os.Looper
 import android.widget.Button
 import android.widget.SeekBar
+import android.widget.TextView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class MainActivity : AppCompatActivity() {
@@ -72,9 +73,17 @@ class MainActivity : AppCompatActivity() {
 
             }
         })
+        val tvPlayed = findViewById<TextView>(R.id.tvPlayed)
+        val tvDue = findViewById<TextView>(R.id.tvViewed)
         seekBar.max = mediaPlayer2!!.duration
         runnable = Runnable {
             seekBar.progress = mediaPlayer2!!.currentPosition
+
+            val playedTime = mediaPlayer2!!.currentPosition/1000
+            tvPlayed.text = "$playedTime sec"
+            val duration = mediaPlayer2!!.duration/1000
+            val dueTime = duration-playedTime
+            tvDue.text = "$dueTime sec"
             handler.postDelayed(runnable,1000)
 
         }

@@ -49,4 +49,4 @@ Feel free to reach out for any questions or feedback. Happy coding!
 
 ## ScreenShots
 
-![Screenshot 1](link_to_screenshot1.png)
+![Screenshot 1](https://github.com/iampranshu2003/laughSoundApp/blob/master/screenshot1.jpg)
